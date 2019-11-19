@@ -38,7 +38,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("网站")
                 .description("包括视频上传，播放；留言板")
-                .contact(new Contact("张超","https://:www.baidu.com","2014961917@qq.com"))
+                .contact(new Contact("张超","https://github.com/2014961917/demo","2014961917@qq.com"))
                 .version("1.0")
                 .build();
     }

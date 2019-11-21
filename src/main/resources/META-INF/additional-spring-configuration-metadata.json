@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "media.chunkSize",
+      "type": "java.lang.String",
+      "description": "Description for media.chunkSize."
+  }
+] }

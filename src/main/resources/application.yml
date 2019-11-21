@@ -9,3 +9,6 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+#媒体配置
+media:
+  chunkSize: 5242880 # 1024 * 1024 * 5    分块文件为5M

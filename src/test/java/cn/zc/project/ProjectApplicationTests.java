@@ -1,6 +1,7 @@
 package cn.zc.project;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.File;
@@ -12,6 +13,8 @@ import java.util.stream.Collectors;
 @SpringBootTest
 class ProjectApplicationTests {
 
+    @Value("${media.chunkSize}")
+    private int chunkSize;
     @Test
     void contextLoads() {
     }
@@ -38,8 +41,8 @@ class ProjectApplicationTests {
                 System.exit(500);
             }
         }
-        //分块大小 1M
-        long chunkSize = 1024 * 1024;
+        /*//分块大小 1M
+        long chunkSize = 1024 * 1024;*/
         //分块数量
         long chunkNum = (long) Math.ceil(sourceFile.length() * 1.0 / chunkSize);
         /*if (chunkNum <= 0){
@@ -76,7 +79,7 @@ class ProjectApplicationTests {
         //块文件目录
         File chunkFolder = new File("F:\\test\\chunk\\");
         //合并文件
-        File mergeFile = new File("F:\\test\\1.mp4");
+        File mergeFile = new File("F:\\test\\1.avi");
         if (mergeFile.exists()) {
             boolean delete = mergeFile.delete();
             if (!delete) {
@@ -116,8 +119,43 @@ class ProjectApplicationTests {
         });
         //查看块文件集合的排序情况
         filesList.forEach(System.out::println);
+        //合并文件
+        for (File chunkFile : filesList) {
+            int len = -1;
+            RandomAccessFile raf_read = new RandomAccessFile(chunkFile,"r");
+            while ((len = raf_read.read(b)) != -1){
+                raf_write.write(b,0,len);
+            }
+            raf_read.close();
+        }
+        raf_write.close();
+
 
     }
 
 
+
+    @Test
+    void exerciseChunk() throws IOException{
+        File sourceFile = new File("F:\\test\\11-媒资管理-上传文件-文件分块测试.avi");
+
+        int chunkNum = (int)Math.ceil(sourceFile.length() * 1.0 / chunkSize);
+
+        RandomAccessFile raf_read = new RandomAccessFile(sourceFile,"r");
+        byte[] b = new byte[1024];
+        for (int i = 0; i < chunkNum; i++) {
+            int len = -1;
+            File chunkFile = new File("F:\\test\\chunk\\"+ i);
+            chunkFile.createNewFile();
+            RandomAccessFile raf_write = new RandomAccessFile(chunkFile,"rw");
+            while ((len = raf_read.read(b)) != -1){
+                raf_write.write(b,0,len);
+                if (chunkFile.length() > chunkSize){
+                    break;
+                }
+            }
+            raf_write.close();
+        }
+        raf_read.close();
+    }
 }

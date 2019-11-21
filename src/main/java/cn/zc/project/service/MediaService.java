@@ -1,6 +1,6 @@
 package cn.zc.project.service;
 
-import cn.zc.project.controller.MediaUploadController;
+import cn.zc.project.controller.MediaUploadUploadController;
 import cn.zc.project.mbg.mapper.MediaFileMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ import java.io.File;
  */
 @Service
 public class MediaService {
-    private final static Logger LOGGER = LoggerFactory.getLogger(MediaUploadController.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(MediaUploadUploadController.class);
 
     @Autowired
     MediaFileMapper mediaFileMapper;

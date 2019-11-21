@@ -1,6 +1,6 @@
 package cn.zc.project.controller;
 
-import cn.zc.project.api.MediaFileControllerApi;
+import cn.zc.project.api.MediaFileUploadControllerApi;
 import cn.zc.project.common.pojo.CommonResult;
 import cn.zc.project.service.MediaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @RestController
 @RequestMapping("/media/upload")
-public class MediaUploadController implements MediaFileControllerApi {
+public class MediaUploadUploadController implements MediaFileUploadControllerApi {
 
     @Autowired
     MediaService mediaService;

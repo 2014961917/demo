@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @Version: 1.0
  */
 @Api(value = "媒资管理接口",tags = "媒资管理接口，提供文件上传，文件处理等接口")
-public interface MediaFileControllerApi {
+public interface MediaFileUploadControllerApi {
 
     @ApiOperation("文件上传注册")
     @ApiImplicitParams({

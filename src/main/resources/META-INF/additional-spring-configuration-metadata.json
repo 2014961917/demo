@@ -4,5 +4,10 @@
       "name": "media.chunkSize",
       "type": "java.lang.String",
       "description": "Description for media.chunkSize."
-  }
-] }
+    },
+    {
+      "name": "media.upload-location",
+      "type": "java.lang.String",
+      "description": "Description for media.upload-location."
+    }
+  ] }

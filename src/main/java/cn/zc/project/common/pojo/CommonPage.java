@@ -1,4 +1,4 @@
-package cn.zc.project.common.api;
+package cn.zc.project.common.pojo;
 
 
 import com.github.pagehelper.PageInfo;

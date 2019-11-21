@@ -1,4 +1,4 @@
-package cn.zc.project.common.api;
+package cn.zc.project.common.pojo;
 
 /**
  * 枚举了一些常用API操作码

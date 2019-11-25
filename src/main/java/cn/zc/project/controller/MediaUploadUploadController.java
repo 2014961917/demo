@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * @Auther: zhangchao
  * @Date: 2019-11-21 16:25
- * @classDesc: 功能描述:(类的作用)
+ * @classDesc: 功能描述:(媒资管理)
  * @Version: 1.0
  */
 @RestController

@@ -4,13 +4,14 @@ import cn.zc.project.mbg.model.MediaFile;
 import cn.zc.project.mbg.model.MediaFileExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 public interface MediaFileMapper {
     long countByExample(MediaFileExample example);
 
     int deleteByExample(MediaFileExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(MediaFile record);
 
@@ -18,7 +19,7 @@ public interface MediaFileMapper {
 
     List<MediaFile> selectByExample(MediaFileExample example);
 
-    MediaFile selectByPrimaryKey(Integer id);
+    MediaFile selectByPrimaryKey(String id);
 
     int updateByExampleSelective(@Param("record") MediaFile record, @Param("example") MediaFileExample example);
 

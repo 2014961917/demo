@@ -40,8 +40,8 @@ public interface MediaFileUploadControllerApi {
     })
     public CommonResult checkChunk(
             String fileMd5,
-            Integer chunk,
-            Integer chunkSize
+            String chunk,
+            String chunkSize
     );
 
     @ApiOperation("上传分块")
@@ -52,7 +52,7 @@ public interface MediaFileUploadControllerApi {
     })
     public CommonResult uploadChunk(
             MultipartFile file,
-            Integer chunk,
+            String chunk,
             String fileMd5
     );
 
